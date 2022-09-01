@@ -8,4 +8,4 @@ The data was gathered collaboratively by Digital Culture students in [DIKULT106]
 
 Scripts in this repository provide simple visualisations of the data, demonstrating issues around data cleaning, classification and interpretation of data.
 
-This is part of a class assignment relating to chapters 4 and 5 of Catherine D'Ignazio and Lauren Klein's book *Data Feminism,* which discuss classification.
+This is part of a class assignment relating to [chapter 4 of Catherine D'Ignazio and Lauren Klein's book *Data Feminism,*](https://data-feminism.mitpress.mit.edu/pub/h1w0nbqp/release/3)which discusses classification.
