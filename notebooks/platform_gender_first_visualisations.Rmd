@@ -1,7 +1,30 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title: "Platform Gender: First visualisations"
+author:
+- name: Jill Walker Rettberg
+  affiliation: University of Bergen
+date: "`r format(Sys.time(), '%d %B,  %Y')`"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    number_sections: no
+    code_folding: hide
+  pdf_document:
+    toc: yes
+
+keywords: humanities, digital humanities, data feminism, classification, gender
 ---
+
+# PlatformGender: Analysing the dataset
+
+In an undergraduate course on Digital Culture at the University of Bergen, we collected data about how gender is handled by 68 online platforms. This notebook provides R code for starting to analyse and clean the data.
+
+## Load the Tidyverse library and the dataset
+
+The first thing we need to do is load Tidyverse, the library we'll use for the visualisations. Then we'll load the data itself.
+
+We made the spreadsheet in an Excel spreadsheet shared through the University's installation of Office. The first three rows include a title and instructions, so we need to skip those rows and just import the data itself. Each column (or *field*) has a rather long-winded header, meant to help us remember what we were supposed to put in that column. R doesn't do well with field names being long and having spaces and question marks, so we'll *recode* the field names (column headers) so they are short and have no spaces.
 
 ```{r setup}
 
@@ -12,11 +35,11 @@ library(tidyverse)
 # skip the first three lines (which have instructions)
 # Rename headers since R can't handle long headers with spaces 
 
-platform_gender <-
-  read_csv2(
-    "DIKULT106-gender-binaries-in-online-platforms.csv",
-    skip = 3,
-    col_select = c(
+platform_gender <-                       # platform_gender is the name we're giving this data
+  read_csv2(                             # read_csv2() imports a csv file that has ; separators
+    "../data/DIKULT106-gender-binaries-in-online-platforms.csv",
+    skip = 3,                            # Skip the first 3 rows
+    col_select = c(                      # Select these columns and rename them
       "site" = "Site Name",
       "URL" = "URL",
       "require_gender" = "Gender required?",
@@ -32,7 +55,7 @@ platform_gender <-
 
 ```
 
-Show the first few lines of the dataset:
+Let's see what that looks like. Use the `head()` command to show the first few lines of the dataset:
 
 ```{r display_first_lines}
 
@@ -40,20 +63,38 @@ head(platform_gender)
 
 ```
 
-Visualise
+## Visualisations
+
+I like to explore data right away by visualising it!
+
+This next bit of code says "take the `platform_gender` data frame we just defined, and use `ggplot` to visualise it.
+
+The `%>%` after `platform_gender` is called a pipe. You type it using the shortcut SHIFT-COMMAND-M (on a mac anyway). It means just means that the next commands reference the same thing. This next bit of code does stuff to `platform_gender` and displays the results, but it doesn't save what it did back to the `platform_gender` dataframe. `platform_gender` will stay the same.
+
+`ggplot` is wonderful and a great place to start learning R. Read [chapter 3 Data visualisation in R for Data Science](https://r4ds.had.co.nz/data-visualisation.html) to find out more.
+
+```{r}
+platform_gender %>% 
+    ggplot(aes(x = site_type, fill = require_gender)) +
+    geom_bar()
+```
+
+Cool! Let's add a title and some labels, and get those site types slanting so we can read them. And how about we look at the proportion of gender-requiring vs non-gender-requiring websites instead of an absolute count.
+
 ```{r}
 platform_gender %>% 
     ggplot(aes(fct_infreq(site_type), fill = require_gender)) +
-    geom_bar(position = "fill") +
-    geom_text(aes(label = ..count..), stat = "count", position = "fill", size = 3) +
+    geom_bar(position = "fill") +     # postion = "fill" makes the bars fill up proportionally
+    geom_text(aes(label = ..count..), stat = "count", position = "fill", size = 3) + # add numbers
     scale_y_continuous(labels = scales::percent) +
     labs (x = "",
           y = "",
           fill = "",
           title = "Which kinds of sites require users to register their gender when signing up?",
           subtitle ="Numbers in bars show raw count of cases.") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))   # this makes the slant
 ```
+
 Aha - one site has the value "no" instead of "No" with a capital N, so it shows up as a whole separate category. And oops, "Social media" and "Social Media" are separated too.
 
 We need to clean the data. We could go back to the original spreadsheet and change this by hand, or do a search and replace in Excel. Or we can recode the data in R.
@@ -88,7 +129,7 @@ platform_gender %>%
 
 OK, that's better.
 
-What are the NAs? NA stands for Not Available, so it means the data is missing. Let's exclude rows that have missing data. 
+What are the NAs? NA stands for Not Available, so it means the data is missing. Let's exclude rows that have missing data.
 
 ```{r}
 
@@ -108,13 +149,13 @@ platform_gender %>%
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
-OK. But maybe using proportional bars isn't quite right since the different categories have very different numbers of cases. 
+OK. But maybe using proportional bars isn't quite right since the different categories have very different numbers of cases.
 
 We could combine some o fhte smaller categories. Transport and E-commerce, perhaps? Webforum and News, maybe? This would loose granualarity and detail, but make categories more comparable. Or, we could decide to add more examples of sites in the categories with less examples. Maybe if we found MORE examples of news sites we'd see more variation?
 
 If we'd started with a representative sample or a more systematic sample (the 100 most commonly used websites for students in Norway, for instance) we could say something definite about this, but now we can really only say that the two websites we looked at don't require gender - but maybe other news sites do?
 
-One thing we can do easily is show the bars based on the count of cases rather than proportionally. 
+One thing we can do easily is show the bars based on the count of cases rather than proportionally.
 
 ```{r}
 # Same code as above, but add the line drop_na() before we start the visualisation 
@@ -131,6 +172,7 @@ platform_gender %>%
           subtitle ="Numbers in bars show raw count of cases. Missing data is excluded.") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
+
 Maybe it's different depending on which country the site is located in?
 
 ```{r}
@@ -146,7 +188,8 @@ platform_gender %>%
           subtitle ="Numbers in bars show raw count of cases. Missing data is excluded.") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
-We need to clean the data again: USA and American should be the same. 
+
+We need to clean the data again: USA and American should be the same.
 
 ```{r}
 platform_gender <- platform_gender %>% 
@@ -167,7 +210,8 @@ platform_gender %>%
           subtitle ="Numbers in bars show raw count of cases. Missing data is excluded.") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
-How about grouping countries? I'll just do it using recode - but we could also choose a standard region grouping like the World Bank.
+
+How about grouping countries? I'll just do it using recode - but we could also choose a standard region grouping like the World Bank. The way I'm doing it here means I'll have to change the code if someone changes the dataset and adds a new country.
 
 ```{r}
 platform_gender <- platform_gender %>% 
@@ -198,21 +242,49 @@ platform_gender %>%
           subtitle ="") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
-Wow, it looks like the USA and Scandinavia are much more likely to require gender specification than other European countries! Is that just an artefact of which sites we chose, or is Scandinavia more like the US in requiring gender than the rest of Europe is? That question gives us a possible hypothesis ("Scandinavian websites are more likely than other European sites to gender their users") and we could design a research project to test the hypothesis - we'd need more data and we'd need to be sure we were collecting comparable samples from Scandinavian and other European countries. 
 
-For now, we should go back to the data and consider what this means? Maybe we have more health sites from Scandinavia and so gender is required due to the type of site, not the country? Or maybe Scandinavians trust government so much they're happier about sharing gender than Germans and French people?
+Wow, it looks like the USA and Scandinavia are much more likely to require gender specification than other European countries! Is that just an artefact of which sites we chose, or is Scandinavia more like the US in requiring gender than the rest of Europe is? That question gives us a possible hypothesis ("Scandinavian websites are more likely than other European sites to gender their users") and we could design a research project to test the hypothesis - we'd need more data and we'd need to be sure we were collecting comparable samples from Scandinavian and other European countries.
+
+Just for another look at this, I'll try a different way of displaying the data to show the *type* of site as well as the country. This is called *faceting*.
 
 ```{r}
 platform_gender %>% 
-  drop_na(require_gender, country) %>% 
-    ggplot(aes(fct_infreq(country), fill = require_gender)) +
-    geom_bar(position = "fill") +
-    geom_text(aes(label = ..count..), stat = "count", position = "fill", size = 3) +
+  drop_na(require_gender, site_type, country) %>% 
+    ggplot(aes(fct_infreq(site_type), fill = require_gender)) +
+    geom_bar() +
+   # geom_text(aes(label = ..count..), stat = "count", position = "fill", size = 3) +
     labs (x = "",
           y = "",
           fill = "",
-          title = "Which countries requiqre users to register their gender when signing up?",
-          subtitle ="Proportional. Numbers show actual count of cases.") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+          title = "Gender requirement at signup by country and site type",
+          subtitle ="Numbers in bars show raw count of cases. Missing data is excluded.") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) + 
+  facet_wrap(~ country)
 ```
 
+Hm, maybe we should do that the other way around?
+
+```{r}
+platform_gender %>% 
+  drop_na(require_gender, site_type, country) %>% 
+    ggplot(aes(fct_infreq(country), fill = require_gender)) +
+    geom_bar() +
+   # geom_text(aes(label = ..count..), stat = "count", position = "fill", size = 3) +
+    labs (x = "",
+          y = "",
+          fill = "",
+          title = "Gender requirement at signup by site type and country",
+          subtitle ="Numbers in bars show raw count of cases. Missing data is excluded.") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) + 
+  facet_wrap(~ site_type)
+```
+
+Does this help us interpret the data?
+
+Maybe we have more health sites from Scandinavia and so gender is required due to the type of site, not the country? Or is there something else about our sample that skews the results?
+
+What data would we need to collect to see if it's a general trend that the US and Scandinavia requiring gender, while the rest of Europe and Asia does not?
+
+If the regional different is real and not just an artefact of our sample, why would that be the case? Maybe Scandinavians trust government so much they're happier about sharing gender than Germans and French people? Do Americans and Scandinavians generally share more personal information than Germans and French people? How would we find out more about that?
+
+There are lots of other ways we could visualise this data - this is just a starting point. 
