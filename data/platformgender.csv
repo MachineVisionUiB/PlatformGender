@@ -1,0 +1,73 @@
+﻿DIKULT106 class assignment;;;;;;;
+30.08.2022;;;;;;;
+Work in pairs to gather data about how gender is encoded in various online platforms. Add more sites when these are filled out. ;;;;;;;
+Site Name;URL;Gender required?;Can you choose/change your gender on the site later on?;Gender options available;Country it is based in;Type of site;Comments (notes that you couldn't fit in the quantitative columns)
+Facebook;https://www.facebook.com/;Yes;Yes;f/m/custom;USA;Social media;if you choose custom, you can also add your preferred pronouns
+Skype;https://www.skype.com/en/;No;Yes;M/F;Luxembourg;Messaging;
+Snapchat;https://www.snapchat.com/;No;Yes;M/F;USA;Social media;Lot's of different filiters that you can add to your gender. As well as gender swap filters
+Fitbit;https://www.fitbit.com/;Yes;Yes;M/F;USA ;Health;
+SAS;http://sas.no;Yes;Yes;M/F;Norway;Transport;
+PayPal;https://paypal.com;Yes;Yes;m/f;USA;;PayPal needs you to send in legal documents of name/gender change before allowing it.
+Rateyourmusic;https://rateyourmusic.com/;No;Yes;M/F/Custom;USA ;Social Media;Music rating platform
+Google account;https://accounts.google.com/SignUp;Yes;Yes;m/f/custom;USA;Messaging;
+Spotify;www.spotify.com;Yes;Yes;M/F/NB;Sweden;Social media;
+Letterboxd;https://letterboxd.com/;Yes;Yes;M/F/NB;USA;Social media;Includes many different neopronouns options - movie rating/review site
+uPlay;https://www.ubisoftconnect.com;No;Yes;M/F/NB/none;USA ;Entertainment;
+Spotify;http://spotify.com;Yes;Yes;M/F/NB/none;Sweden;Entertainment;
+My nintendo;https://my.nintendo.com/;Yes;Yes;M/F/None;Japan;Entertainment;Kind of entertainment, but is also used for payments and discounts/ point collecting in the e-shop
+Neopets;https://www.neopets.com/;;Yes;m/f/other;;Web forum;Forum and game
+Møteplassen.no;https://www.moteplassen.com/front-no;Yes;Yes;M/W;Norway;Dating;Website broken, could not find love.
+Habbo;https://www.habbo.com;Yes;Yes;M/W;USA ;Social media;
+Ikea;https://www.ikea.com/no/no/;No;;M/W/irrelevant;Sweden;E-commerce;
+Internet Movie Database;http://imdb.com;No;Yes;M/W/opt out;USA ;Entertainment;Movie/Series information
+Norwegian;https://www.norwegian.no/;Yes;Yes;Man/Woman;Norway;Transport;Airline booking site
+Tinder;https://tinder.com/@maxtest?lang=en-GB;;Yes;Man/Woman;USA ;Dating;Possible to write in other genders
+Bumble;https://bumble.com;Yes;Yes;Man/Woman/non-binary;USA ;Dating;Possibility to choose from up to 33 genders, and there is an option to add a gender yourself 
+Schibsted;https://schibsted.com/;No;Yes;Man/Woman/Other;Norway;Social media;VG,FINN etc
+Untappd;https://untappd.com/;No;Yes;Man/Woman/Other;USA ;Social media;
+Kvinneguiden;https://forum.kvinneguiden.no;No;Yes;Man/Woman/Other/Not important;Norway;Web forum;
+Discogs;https://www.discogs.com/;No;No;none;USA ;E-commerce;
+Agnes (HU Berlin);https://agnes.hu-berlin.de;No;No;none;Germany;Education;
+ToreLuga Blog;http://toreluga.blogspot.com/ ;No;No;None;Norway;Education;It's a blog about poems
+Wikipedia;https://no.wikipedia.org/;No;No;none;USA ;Education;
+Disney +;https://www.disneyplus.com;No;No;None;American;Entertainment;
+Runescape;https://oldschool.runescape.com;No;No;None;British;Entertainment;Game
+Lichess;https://lichess.com;No;No;none;France;Entertainment;
+Chess.com;www.chess.com ;No;No;none;USA;Entertainment;
+Netflix;https://www.netflix.com/no/;No;No;None;USA ;Entertainment;
+YouTube;https://www.youtube.com;No;No;None;USA ;Entertainment;
+Bandcamp;https://bandcamp.com/;No;No;None;USA ;Entertainment;Service for buying physical and digital music.
+Twitch;http://twitch.com;No;No;none;USA ;Entertainment;Site for streaming gameplay
+Sammen;https://sammen.ibooking.no/minside/;No;;None;Norway;Health;Gender must be specified when registering as a member M/F
+Outlook;https://www.outlook.live.com;No;No;None;USA;Messaging;
+Bergens Tidende;https://www.bt.no/;No;No;None;Norway;News;
+Amedia;https://www.aid.no/;No;No;None;;News;News conglomerate. Dagbladet etc.
+Tumblr;http://tumblr.com;No;No;None;American;Social media;
+Soundcloud;www.soundcloud.com;No;No;None;Germany;Social media;Music streaming website
+LinkedIn;https://www.linkedin.com/;No;No;None;USA;Social media;You can add gender to your profile bio if you want, but no specific category to fill into
+Discord;https://discord.com/;No;No;none;USA;Social media;"""Skype on Steroids"". Multi-use platform ( servers being social media) "
+VY;http://vy.no;No;No;none;Norway;Transport;
+Skyss;https://www.skyss.no/;No;No;None;Norway;Transport;
+Ruter;https://ruter.no/;No;No;None;Norway;Transport;
+Vy;http://vy.no;No;No;none;Norway;Transport;
+Flight Rising;https://www1.flightrising.com/;No;No;None;USA;Web forum;Forum and game
+Duolingo;https://www.duolingo.com/;No;No;none;USA ;Education;
+Helsenorge;http://helsenorge.no;Yes;No;none;Norway;Health;
+Whatsapp;https://web.whatsapp.com;No;Yes;none;USA ;Messaging;
+Moviestarplanet;https://moviestarplanet.no;Yes;No;yes; Denmark;Entertainment;
+Meningstorget;https://www.meningstorget.no/;no;yes;yes;Norway;Entertainment;
+Instagram;https://www.instagram.com;No;Yes;Yes;USA;Social media;Available options: male, female, individually defined, or option not to show gender. 
+Zalando;https://www.zalando.no;No;No;;Germany;E-commerce;They don't have gender so to speak, but they have which type of fashion you are interested in: Male fashion, female fashion or no preference. And you can change that as you please.
+Twitter;https://twitter.com;No;No;;USA ;Social media;
+OnlyFans;https://onlyfans.com;No;Yes;;;Entertainment;They dont have gender.
+Steam;https://store.steampowered.com/;No;Yes;;USA ;Social media;You can add gender to your profile bio if you want, but no specific category to fill into
+Reddit;https://reddit.com/;No;Yes;;USA;Web forum;Multi-use platform
+Grindr;https://www.grindr.com;Yes;Yes;;USA;Dating;
+Rotten Tomatoes;https://www.rottentomatoes.com/;No;;;USA ;Entertainment;Under maintenance, no idea whether or not gender is a profile option
+TikTok;https://www.tiktok.com;No;;;China;Social media;
+Archive of One's Own;https://archiveofourown.org/;No;;;;Social media;Fanfiction. Need invite to create an account.
+Mitt UiB;http://mittuib.no;Yes;;;Norway;Education;You can chose from many different pronouns, but not gender specifically
+The Internet Archive;https://archive.org/;;;;;;
+Dropbox;;;;;;;
+liveleaks;;;;;;;
+MittUib;https://mitt.uib.no/;;;;;;

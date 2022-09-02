@@ -12,7 +12,6 @@ output:
     code_folding: hide
   pdf_document:
     toc: yes
-
 keywords: humanities, digital humanities, data feminism, classification, gender
 ---
 
@@ -288,3 +287,9 @@ What data would we need to collect to see if it's a general trend that the US an
 If the regional different is real and not just an artefact of our sample, why would that be the case? Maybe Scandinavians trust government so much they're happier about sharing gender than Germans and French people? Do Americans and Scandinavians generally share more personal information than Germans and French people? How would we find out more about that?
 
 There are lots of other ways we could visualise this data - this is just a starting point. 
+
+Ideas from your written assignments include:
+- most websites in which you interact with other people using the platform there are an option for users to select a gender
+- commercial sites don't explicitly gather gender, but do classify customers - how does this work and how could we research it?
+- Facebook doesn't require data on signup, but their privacy policy makes it clear that they do collect data on gender for advertisers, even on people without an account. So as Nikki asks can "the data provided in our dataset say anything about if and how platforms collect data on gender"?
+- Tor Erik visualises the genders avaialble by dividing them into two categories: "only two" and "more than two". This is helpful! But there is a  lot of missing data here - should we revise the data?
