@@ -1,0 +1,37 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: The PlatformGender Dataset
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - family-names: DIKULT106 students at the University of Bergen
+    affiliation: University of Bergen
+repository: 'https://github.com/MachineVisionUiB/PlatformGender'
+abstract: >-
+  This dataset lists 68 online platforms used by BA
+  students in a class at the University of Bergen in
+  August 2022 with information about how gender is
+  handled by the platform. The dataset includes
+  fields indicating whether gender is required at
+  signup, whether gender can be changed after signup,
+  and the country the site is located in or has their
+  main office. Free text comments are included for
+  some sites.
+
+
+  The data was gathered collaboratively by Digital
+  Culture students in DIKULT106 at the University of
+  Bergen in a class session on 30 August 2022. No
+  quality control has been done as it is intended for
+  educational purposes rather than as an
+  authoritative source.
+keywords:
+  - dataset
+  - gender
+  - datafeminism
+license: CC-BY-4.0
+date-released: '2022-08-30'
