@@ -8,7 +8,7 @@ message: >-
   metadata from this file.
 type: dataset
 authors:
-  - name: "DIKULT106 students at the University of Bergen"
+  - name: "DIKULT106 students"
     affiliation: "University of Bergen"
 year: 2022
 url: 'https://github.com/MachineVisionUiB/PlatformGender'
