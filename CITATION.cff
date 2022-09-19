@@ -6,10 +6,10 @@ title: The PlatformGender Dataset
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
-type: software
+type: dataset
 authors:
-  - family-names: DIKULT106 students at the University of Bergen
-    affiliation: University of Bergen
+  - name: "DIKULT106 students at the University of Bergen"
+    affiliation: "University of Bergen"
 year: 2022
 url: 'https://github.com/MachineVisionUiB/PlatformGender'
 abstract: >-
