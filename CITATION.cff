@@ -10,7 +10,8 @@ type: software
 authors:
   - family-names: DIKULT106 students at the University of Bergen
     affiliation: University of Bergen
-repository: 'https://github.com/MachineVisionUiB/PlatformGender'
+year: 2022
+url: 'https://github.com/MachineVisionUiB/PlatformGender'
 abstract: >-
   This dataset lists 68 online platforms used by BA
   students in a class at the University of Bergen in
